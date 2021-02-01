@@ -1,0 +1,159 @@
+@charset "utg-8";
+
+body{
+    width: 1024px;
+    height: 768px;
+    resize: none;
+    margin: 80px auto;
+    padding: 0px;
+    border: 3px solid #bcbcbc5e;
+    
+}
+#container{
+    width: 1000px;
+    height: 708px;;
+    resize: none;
+}
+
+header{
+    width: 983px;
+    height: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 20px;
+    background: rgba(80, 152, 186, 0.562);
+}
+#folder{
+    text-align: right;
+    margin-right: 30px;
+}
+
+#tab_content{
+    width: 1003px;
+    height: 598px;
+    resize: none;
+    padding: 10px;
+    float: left;
+    background-color: rgba(80, 152, 186, 0.562);
+}
+#meme{
+    width: 400px;
+    height: 415px;
+    float: left;
+    padding: 20px 25px 0px 0px;
+    /* padding-right: 25px; */
+}
+.inte ul li{
+    list-style: none;
+    display: inline-block;
+
+}
+.inte img{
+    width: 200px;
+    height: 200px;
+
+}
+/* input의 타입이 radio만 골라 화면에 안보이게 처리 */
+input[type="radio"] {
+    display: none;
+    list-style: none;
+    
+}
+input[type="radio"] + label{
+    display:inline-block;  /* 화면에 보이게 처리 */
+    padding:10px 15px 3px 15px; /* 컨텐츠와 간격 설정*/
+    background:#ccc; 
+    color:#999; 
+    font-size:20px; 
+    font-weight: bold;
+    border-radius: 5px 20px 0px 0px;
+    box-shadow: 0 -2px 3px -2px rgba(0, 0, 0, .5);
+    cursor: pointer;/* 마우스가 올라가면 포인터가 바뀌게 설정 */
+}
+
+/* 라디오 타입이 체크되어있을때 변화되는 속성, 라벨을 바꾸기 위해 컬러값 적용*/
+input[type="radio"]:checked + label {
+    background: #fff; 
+    color: #000;
+}
+
+.conbox {
+    width:880px;
+    height: 442px;
+    background: #fff;/* 버튼이 활성화 되었을때와 같은 컬러로 적용 */
+    padding: 38px;
+    margin: 0 auto; /* 가운데정렬 */
+    display: none; /* 화면에서 안보이게 처리 */
+}
+
+label[for*="tab"]{
+    display: inline-block;
+    padding:9px;
+}
+
+label[for="tab01"]{
+    margin-left: 24px;
+}
+
+/* 체크되었을때 화면에서 보이도록 설정 */
+input[id="tab01"]:checked ~ .con1{
+    display: block;
+}
+input[id="tab02"]:checked ~ .con2{
+    display: block;
+}
+input[id="tab03"]:checked ~ .con3{
+    display: block;
+}
+input[id="tab04"]:checked ~ .con4{
+    display: block;
+}
+
+#roadmap{
+    margin-left: 20px;
+}
+#roadmap img{   
+    width: 815px;
+    height: 455px;
+}
+
+#join{
+    width: 300px;
+    height: 300px;
+    float: left;
+    line-height: 35px;
+    margin-left: 280px;
+    margin-bottom: 18px;
+
+}
+#guestBook{
+    border: 1px solid #000;
+    border-collapse: collapse;
+    margin-left: 170px;
+}
+
+#guestBook th, #guestBook td{
+    border: 1px solid #000;
+    padding: 10px;
+    text-align: center;
+}
+
+
+
+footer{
+    width: 1013px;
+    height: 50px;
+    clear: both;
+    padding: 5px;
+    /* border: 1px solid #bcbcbc; */
+    background-color: rgb(092, 105, 124);
+    /* margin: 2px auto; */
+}
+#copy p{
+    /* padding: 5px; */
+    text-align: center;
+    color: rgb(207, 207, 207);
+
+}
+
+
+

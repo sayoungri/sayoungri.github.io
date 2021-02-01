@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Generator" content="EditPlus®">
+    <meta name="Author" content="">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>Project Index</title>
+    <link rel="stylesheet" type="text/css" href="./aboutme_html.css"/>
+    <script src="./js/jquery-3.5.1.js"></script>
+</head>
+<body>
+    <div id="container">
+        <header>
+            <h1 id="folder">Young Ri's Folder</h1>
+        </header>  
+        <section>
+                <article>
+                    <div id="tab_content">
+                        <input type="radio" name="tabmenu" id="tab01" checked>
+                        <label for="tab01">About</label>
+                        <input type="radio" name="tabmenu" id="tab02" >
+                        <label for="tab02">Interest</label>
+                        <input type="radio" name="tabmenu" id="tab03" >
+                        <label for="tab03">Road Map</label>
+                        <input type="radio" name="tabmenu" id="tab04" >
+                        <label for="tab04">Join</label>
+                        
+                        <div class="conbox con1">
+                            <img id="meme" src="./images/meme.jpeg">
+                                <br>
+                                <h3>인적사항</h3>
+                                <p>이름 : 사영리</p>
+                                <p>나이 : 25세</p>
+                                <p>이메일 : bori201905@gmail.com</p>
+                                <p>기술 : Java, HTML/CSS, JavaScript, jQuery 열심히 배우는 중입니다.</p>
+                                <h3>교육사항</h3>
+                                <p>2020년 10월 28일 ~ 2021년 6월 8일 [총 훈련일수 : 150일,  900시간]</p>
+                                <p>교육 기관 : KH정보교육원(강남지점)</p>
+                                <p>  교육 과목 : 스마트 콘텐츠 융합 응용 SW 엔지니어 양성 과정 </p>
+                                <p>  교육 내용 : JAVA, ORACLE SQL, </p>
+                                <p>  HTML5, CSS3, JavaScript, JQuery</p>
+                                <br><br><br>
+                                
+                        </div>
+
+                        <div class="conbox con2">
+                            <h2>저의 최대 관심사는 '고양이'입니다.</h2>
+                            <h2>고세구를 아십니까?</h2>
+                            <h2>바로, 고양이가 세상을 구한다는 것입니다.</h2>
+                            <p>저희 고양이들이 크게 아픈적이 있어서 모든 고양이들이 안 아프고 행복했으면 좋겠습니다. 
+                                고양이가 보기에는 정말 귀엽지만 사람이랑 똑같은 생명체이기 때문에 아프기도하고, 때리기도하고, 삐지기도합니다. 고양이를 키우시고싶으면 펫샵이 아닌 입양을 하세요.</p>
+                            <p>사진은 저희집 주인님들 첫째: 구리, 둘째: 수리 ,막냉이: 보리입니다. </p>
+                            
+                            <div class="inte">
+                                <ul>
+                                    <li><img src="./images/goori.jpeg"  alt=""></li>
+                                    <li><img src="./images/KakaoTalk_Photo_cat.jpeg"  alt=""></li>
+                                    <li><img src="./images/KakaoTalk_Photo_bori.jpeg"  alt=""></li>
+                                    <li><img src="./images/booori.jpeg"  alt=""></li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="conbox con3">
+                            <div id="roadmap">
+                                    <img src="./images/roadmap.png" class="road" alt="사진을 가져올 수 없습니다.">
+                            </div>
+                        </div>
+
+                    <div class="conbox con4">
+                        <form action="javascript:saveGuestBook();">
+                            <fieldset id="join">
+                            <legend>회원가입</legend>
+                            <table id="geustBookInput">
+                                <tr>
+                                    <th><label for="userName">이름</label></th>
+                                    <td><input type="text" name="userName" id="userName" placeholder="2글자 이상 입력하세요"></td>
+                                </tr>
+                                <tr>
+                                    <th><label for="userId">아이디</label></th>
+                                    <td><input type="text" name="userId" id="userId" placeholder="4글자 이상 입력하세요"></td>
+                                </tr>
+                                <tr>
+                                    <th><label for="userEmail">이메일</label></th>
+                                    <td><input type="text" name="userEmail" id="userEmail" placeholder="abcd@domain.com"></td>
+                                </tr>
+                                <tr>
+                                    <th><label for="pwd">비밀번호</label></th>
+                                    <td><input type="text" name="pwd" id="pwd" placeholder="4글자 이상 입력하세요"></td>
+                                </tr>
+                                <tr>
+                                    <th><label for="pwdCheck">비밀번호 확인</label></th>
+                                    <td><input type="password" name="pwdCheck" id="pwdCheck"></td>
+                                </tr>
+                                <tr>
+                                    <th><label for="userMemo">하고싶은말</label></th>
+                                    <td><textarea name="userMemo" id="userMemo"></textarea></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <input type="submit" value="가입 완료">
+                                    </td>
+                                </tr>
+                            </table>
+                        </fieldset>
+                        </form>
+                        <div class="wrapper">
+                            <table id="guestBook"></table>
+                        </div>
+                    </div>
+                </article>
+        </section>
+
+        <footer>
+            <div id="copy">
+                <p>Copyright ⓒ 2021 SA YOUNG RI All Right Reserved</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        function saveGuestBook(){
+    var guestBook = new GuestBook($(userName).val(), $(userId).val(),$(userEmail).val(), $(pwd).val(), $(pwdCheck).val(), $(userMemo).val());
+    console.log(guestBook);
+
+    //기존 데이터 가져오기. 존재하지 않을때만 새로운 배열 생성
+    // var arr = []; 
+    var arr = JSON.parse(localStorage.getItem("arr"));
+    if(arr == null) arr = [];
+    arr.push(guestBook);
+    console.log(arr);
+
+    //배열로 저장 
+    var jsonStr = JSON.stringify(arr);
+    localStorage.setItem("arr", jsonStr);
+    
+    //초기화
+    $(userName).val('').focus();
+    $(userId).val('');
+    $(userEmail).val('');
+    $(pwd).val('');
+    $(pwdCheck).val('');
+    $(userMemo).val('');
+
+    //새로 입력된 정보로 갱신
+    loadGuestBook();
+    }
+
+    function GuestBook(name, id, email, pwd, pwdCheck, memo){
+        this.name = name;
+        this.id = id;
+        this.email = email;
+        this.pwd = pwd;
+        this.pwdCheck = pwdCheck;
+        this.memo = memo;
+        this.time = new Date().getTime(); //unix second로 시간 관리하겠다라는 의미
+    }
+
+    /**
+     * html DOM등록을 마치면(load), localStorage의 데이터를 읽어서 테이블로 출력
+     */ 
+    //방문자 정보 화면 출력하기
+    $(function(){
+        loadGuestBook(); //onload함수 반드시 필요 돔 등록이 완료된 후 호출되어야하기 떄문
+    });
+    /**
+     * 화면 최초 로딩시, 방문자정보 새로 추가시 호출되어
+     * 화면에 방명록정보를 표시한다.
+     */ 
+    function loadGuestBook(){
+        var arr = JSON.parse(localStorage.getItem("arr"));
+        var $guestBook = $(guestBook); //table 태그
+        // console.log(arr); //localstorage에 저장된 arr 확인 
+
+        //헤더부분 추가
+        $guestBook.html("<tr><th>No</th><th>이름</th><th>아이디</th><th>이메일</th><th>하고싶은말</th><th>가입일시</th><tr>");
+
+        //내용부분 추가
+        if(arr == null){
+            $guestBook.append("<tr><td colspan='6'>회원목록이 없습니다.</td></tr>");
+        }
+        else{
+
+            $.each(arr, function(index, elem){
+                console.log(index,elem);//콘솔로 다시 확인 
+                var date = new Date(elem.time); //unix second -> date객체로 변환
+                var tr = "<tr>";
+                tr += "<td>" + (index + 1)+ "</td>";
+                tr += "<td>" + elem.name + "</td>";
+                tr += "<td>" + elem.id + "</td>";
+                tr += "<td>" + elem.email + "</td>";
+                tr += "<td>" + elem.memo.replaceAll("\n", "<br>") + "</td>";
+                tr += "<td>" + displayTime(date) + "</td>";
+                tr += "</tr>"; //요소 하나당 한 행 
+                console.log(tr);
+                $guestBook.append(tr); //자식요소로써 맨뒤에 추가
+            });
+        }
+    }
+    /**
+     * 2021/01/28 11:50
+     */ 
+    function displayTime(date){
+        return date.getFullYear()+ "/" + (date.getMonth() + 1) + "/" + date.getDate() 
+                + " " + date.getHours() + ":" + date.getMinutes();
+    }
+    
+    </script>
+</body>
+</html>
